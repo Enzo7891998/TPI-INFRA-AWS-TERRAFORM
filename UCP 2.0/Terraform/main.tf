@@ -8,15 +8,15 @@ resource "aws_s3_bucket" "test" {
 }
 
 
-#resource "aws_s3_object" "backup_files" {
- # bucket = aws_s3_bucket.test.id
-  #key    = "ruta/del/archivo/backup.zip"  
-  #source = "/ruta/local/del/archivo/backup.zip"  
+resource "aws_s3_object" "backup_files" {
+  bucket = aws_s3_bucket.test.id
+  key    = "ruta/del/archivo/backup.zip"  
+  source = "/ruta/local/del/archivo/backup.zip"  
 
-  #tags = {
-   # Name = "Archivo de backup"  
-  #}
-#}
+  tags = {
+    Name = "Archivo de backup"  
+  }
+}
 
 resource "aws_instance" "instance1" {
   ami           = "ami-08a0d1e16fc3f61ea"
