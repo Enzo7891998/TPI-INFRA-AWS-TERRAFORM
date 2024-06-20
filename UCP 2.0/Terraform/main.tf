@@ -48,7 +48,7 @@ resource "aws_instance" "instance2" {
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
 }
 
-# Crear un IAM Role y una política que permite acceso al bucket S3
+
 resource "aws_iam_role" "ec2_s3_access_role" {
   name = "ec2_s3_access_role"
 
