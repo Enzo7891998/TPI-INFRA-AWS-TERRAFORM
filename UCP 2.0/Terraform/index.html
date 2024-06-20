@@ -5,62 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro de Respaldo de Backup de la UCP</title>
   <style>
+    /* Estilos generales */
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #f5f5f5;
+      background: url('https://www.ucp.edu.ar/wp-content/uploads/2023/12/Muestra-Banner-Home-Opcion-02-Campana-Mundo-Cuenca-UCP.jpg') no-repeat center center fixed;
+      background-size: cover;
       padding: 20px;
-    }
-    h1 {
-      color: #333;
+      line-height: 1.6;
+      margin: 0;
     }
     .container {
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
       padding: 20px;
-      max-width: 400px;
-      margin: auto;
+      max-width: 600px;
+      margin: 100px auto;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    h1 {
+      color: #fff;
+      background-color: #000;
+      border-radius: 50px;
+      padding: 10px 20px;
+      display: inline-block;
+      margin-bottom: 20px;
     }
     .form-group {
-      margin-bottom: 15px;
-      text-align: left;
+      margin-bottom: 20px;
     }
     label {
       display: block;
       margin-bottom: 5px;
-      color: #555;
+      color: #333;
     }
+    input[type="text"],
     input[type="file"],
     input[type="date"] {
-      width: 100%;
-      padding: 8px;
+      width: calc(100% - 16px);
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
       box-sizing: border-box;
+      font-size: 14px;
     }
     .buttons {
       display: flex;
       justify-content: space-between;
+      margin-top: 20px;
     }
     .buttons button {
-      padding: 10px 20px;
+      flex: 1;
+      padding: 12px 0;
       border: none;
-      border-radius: 5px;
+      border-radius: 50px;
       cursor: pointer;
       font-size: 16px;
+      transition: background-color 0.3s ease;
+      margin: 0 5px;
     }
     .buttons .accept {
-      background-color: #28a745;
+      background-color: #007bff;
       color: #fff;
     }
+    .buttons .accept:hover {
+      background-color: #0056b3;
+    }
     .buttons .reject {
-      background-color: #dc3545;
+      background-color: #831d1d;
       color: #fff;
+    }
+    .buttons .reject:hover {
+      background-color: #e0a800;
     }
   </style>
 </head>
 <body>
-  <h1>Bienvenidos al Centro de Respaldo de Backup de la UCP</h1>
   <div class="container">
+    <h1>Bienvenidos al Centro de Respaldo de Backup de la UCP</h1>
+    
     <form id="backupForm">
       <div class="form-group">
         <label for="backupFile">Selecciona el archivo de backup:</label>
@@ -69,6 +94,10 @@
       <div class="form-group">
         <label for="backupDate">Fecha del backup:</label>
         <input type="date" id="backupDate" name="backupDate" required>
+      </div>
+      <div class="form-group">
+        <label for="backupPerson">Encargado del Backup</label>
+        <input type="text" id="backupPerson" name="backupPerson" required>
       </div>
       <div class="buttons">
         <button type="submit" class="accept">Aceptar</button>
